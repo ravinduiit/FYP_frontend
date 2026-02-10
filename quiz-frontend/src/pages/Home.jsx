@@ -71,21 +71,22 @@ export default function Home() {
           <div>
             <div className="hero-badge">
               <span>⚡</span>
-              <span>Generate quizzes from YouTube transcripts</span>
+              <span>Generate personalized Note from YouTube transcripts</span>
             </div>
 
             <h1 className="hero-title">
-              Turn any YouTube video into a <span className="grad">Quiz + Notes</span> in seconds.
+              Learn smarter from any <span className="grad"> YouTube video </span> with a personalized learning way
+              {/* Turn any YouTube video into a <span className="grad">Personalized Notes</span> in seconds. */}
             </h1>
 
             <p className="hero-desc">
               This system extracts the video transcript, understands the content, and creates
-              MCQ questions, short notes, and recommendations based on the learner level —
+              MCQ questions, personalized short notes and personalized mind map, and recommendations based on the learner level —
               so students can study faster and smarter.
             </p>
 
             <div className="hero-actions">
-              <Link to="/register" className="btn btn-primary">
+              <Link to="/create" className="btn btn-primary">
                 Get Started
                 <span aria-hidden>→</span>
               </Link>
@@ -104,7 +105,7 @@ export default function Home() {
             <div className="hero-logo">
               <img src={logo} alt="System logo" />
               <div>
-                <div className="hero-mini-title">QuizGen</div>
+                <div className="hero-mini-title">TransQuizX</div>
                 <div className="hero-mini-sub">AI-powered learning companion</div>
               </div>
             </div>
@@ -112,7 +113,7 @@ export default function Home() {
             <HeroIllustration />
 
             <div style={{ marginTop: 12, color: "rgba(255,255,255,0.70)", fontSize: 13, lineHeight: 1.6 }}>
-              Paste a link → transcript → quiz + notes → save per video. Perfect for exam prep and quick revision.
+              Paste a link → transcript → quiz + notes → save per video. Perfect for exam prep and quick revision and get personalized learing path.
             </div>
           </div>
         </div>
@@ -135,7 +136,21 @@ export default function Home() {
             <div className="card">
               <h3>Notes by User Level</h3>
               <p>
-                Summarized notes tailored for beginner / intermediate / advanced learners.
+                Personalized notes tailored for beginner / intermediate / advanced learners.
+              </p>
+            </div>
+
+            <div className="card">
+              <h3>Learning path by User Level</h3>
+              <p>
+                Personalized mind map tailored for beginner / intermediate / advanced learners.
+              </p>
+            </div>
+
+            <div className="card">
+              <h3>Explanation</h3>
+              <p>
+                Give explanation for each questions with match to user level.
               </p>
             </div>
 
@@ -145,6 +160,14 @@ export default function Home() {
                 Suggests what to learn next: key topics, related terms, and revision points from the same video.
               </p>
             </div>
+
+            <div className="card">
+              <h3>Answers for comments</h3>
+              <p>
+                Give the answers for comments related to video's contents
+              </p>
+            </div>
+
           </div>
         </div>
       </section>
@@ -197,8 +220,6 @@ export default function Home() {
               YouTube learning content into structured study materials:
               quizzes for practice, notes for revision, and recommendations to guide learning.
               <br /><br />
-              It is designed for your Final Year Project workflow: multiple videos, saved by video ID, and
-              easy access to questions, notes, and suggestions anytime.
             </p>
 
             <div style={{ marginTop: 14, display: "flex", gap: 10, flexWrap: "wrap" }}>
@@ -213,7 +234,7 @@ export default function Home() {
       {/* FOOTER */}
       <footer className="footer">
         <div className="container">
-          © {new Date().getFullYear()} QuizGen — YouTube Transcript → Quiz + Notes
+          © {new Date().getFullYear()} TransQuizX — YouTube Transcript → Quiz + Personalized Notes + Personalized Mind Map
         </div>
       </footer>
     </div>

@@ -1,0 +1,231 @@
+:root{
+  --bg: #0B0F1A;
+  --card: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.10);
+
+  --blue: #87ADFC;
+  --sky: #98C5FE;
+  --lav: #A7A3FB;
+  --violet: #BEB1FE;
+
+  --text: rgba(255,255,255,0.92);
+  --muted: rgba(255,255,255,0.65);
+}
+
+.cq-wrap{
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 8px 0 40px;
+}
+
+.cq-top{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 10px 0 18px;
+}
+
+.cq-title{
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: 0.2px;
+}
+
+.cq-subtitle{
+  margin: 8px 0 0;
+  color: var(--muted);
+  max-width: 760px;
+}
+
+.cq-card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 16px;
+  margin-top: 14px;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.35);
+}
+
+.cq-card-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.cq-h2{
+  margin: 0;
+  font-size: 16px;
+  color: var(--text);
+}
+
+.cq-pill{
+  font-size: 12px;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+.cq-pill-gradient{
+  border: none;
+  color: #0B0F1A;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--sky), var(--violet));
+}
+
+.cq-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.cq-item{
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.10);
+  padding: 14px;
+  background: rgba(0,0,0,0.20);
+}
+
+.cq-item-title{
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.cq-item-meta{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.cq-tag{
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(152,197,254,0.30);
+  background: rgba(152,197,254,0.10);
+  color: rgba(255,255,255,0.85);
+}
+
+.cq-dot{ opacity: 0.7; }
+.cq-date{ opacity: 0.8; }
+
+.cq-actions{
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.cq-link{
+  color: rgba(152,197,254,0.95);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13px;
+}
+.cq-link:hover{ text-decoration: underline; }
+
+.cq-small-btn{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--text);
+  padding: 8px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 12px;
+}
+.cq-small-btn:hover{
+  background: rgba(255,255,255,0.10);
+}
+
+.cq-form{ margin-top: 6px; }
+
+.cq-label{
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.cq-input-row{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.cq-input{
+  flex: 1;
+  padding: 12px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.25);
+  color: var(--text);
+  outline: none;
+}
+.cq-input:focus{
+  border-color: rgba(152,197,254,0.45);
+  box-shadow: 0 0 0 4px rgba(152,197,254,0.10);
+}
+
+.cq-btn{
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  font-weight: 800;
+  color: #0B0F1A;
+  background: linear-gradient(90deg, var(--sky), var(--violet));
+  box-shadow: 0 12px 30px rgba(135,173,252,0.18);
+}
+
+.cq-alert{
+  margin-top: 12px;
+  padding: 12px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.20);
+  color: var(--text);
+  font-size: 13px;
+}
+
+.cq-alert-error{
+  border-color: rgba(255,100,100,0.35);
+  background: rgba(255,100,100,0.10);
+}
+
+.cq-alert-success{
+  border-color: rgba(120,255,170,0.35);
+  background: rgba(120,255,170,0.10);
+}
+
+.cq-alert-loading{
+  border-color: rgba(152,197,254,0.35);
+  background: rgba(152,197,254,0.10);
+}
+
+.cq-help{
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.cq-help code{
+  background: rgba(255,255,255,0.06);
+  padding: 2px 6px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.10);
+}
+
+@media (max-width: 980px){
+  .cq-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 640px){
+  .cq-grid{ grid-template-columns: 1fr; }
+  .cq-input-row{ flex-direction: column; align-items: stretch; }
+  .cq-btn{ width: 100%; }
+}
