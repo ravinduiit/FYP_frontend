@@ -92,14 +92,38 @@
   background: linear-gradient(90deg, var(--sky), var(--violet));
   box-shadow: 0 10px 26px rgba(135,173,252,0.18);
   transition: transform 0.15s ease;
+  border: none;
+  cursor: pointer;
 }
 
 .nav-btn:hover{
   transform: translateY(-1px);
 }
 
+.nav-user{
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+  font-size: 14px;
+  max-width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.logout-btn{
+  font-family: inherit;
+}
+
 @media (max-width: 720px){
   .brand-subtitle{ display:none; }
   .nav-links{ gap: 6px; }
   .nav-link{ padding: 9px 10px; }
+  .nav-user{
+    max-width: 110px;
+    font-size: 13px;
+    padding: 9px 10px;
+  }
 }

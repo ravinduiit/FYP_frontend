@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import "../styles/createQuiz.css";
+import { generateQuiz } from "../services/quizService";
 
 function extractVideoId(url) {
   if (!url) return null;
@@ -48,34 +49,39 @@ export default function CreateQuiz() {
   );
 
   const onGenerate = async () => {
-    const vid = extractVideoId(url);
+  const vid = extractVideoId(url);
 
-    if (!vid) {
-      setStatus({ type: "error", message: "Please enter a valid YouTube URL." });
-      return;
-    }
+  if (!vid) {
+    setStatus({ type: "error", message: "Please enter a valid YouTube URL." });
+    return;
+  }
 
-    setStatus({ type: "loading", message: "Generating quiz..." });
+  setStatus({ type: "loading", message: "Analyzing video & extracting the transcript..." });
 
-    try {
-      // ✅ API call later
-      // const res = await fetch("http://localhost:5000/generate-quiz", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify({ url }),
-      // });
-      // const data = await res.json();
+  try {
+    const data = await generateQuiz(url);
 
-      await new Promise((r) => setTimeout(r, 600));
+    // success message
+    setStatus({
+      type: "success",
+      message: "🎉 Transcript extracted successfully!",
+    });
 
-      setStatus({
-        type: "success",
-        message: `OK! Video ID: ${vid}. (Next step: connect to backend)`,
-      });
-    } catch (e) {
-      setStatus({ type: "error", message: "Something went wrong. Try again." });
-    }
-  };
+    // optional: navigate to video page after 1.5s
+    setTimeout(() => {
+      window.location.href = `/video/${vid}`;
+    }, 1500);
+
+  } catch (err) {
+    setStatus({
+      type: "error",
+      message: "Something went wrong while extracting Transcript.",
+    });
+  }
+};
+
+
+
 
   return (
     <div className="cq-wrap">
@@ -150,8 +156,12 @@ export default function CreateQuiz() {
               value={url}
               onChange={(e) => setUrl(e.target.value)}
             />
-            <button className="cq-btn" onClick={onGenerate}>
-              Generate
+            <button
+            className="cq-btn"
+            onClick={onGenerate}
+            disabled={status.type === "loading"}
+            >
+            {status.type === "loading" ? "Processing..." : "Generate"}
             </button>
           </div>
 
